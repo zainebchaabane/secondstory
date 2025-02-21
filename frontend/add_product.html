@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add product</title>
+    <link href="css/donation.css" rel="stylesheet"/>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    
+    <h2>Add Product</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="item_type">Item Type:</label>
+        <select id="item_type" name="item_type" onchange="toggleFields()">
+            <option value="">-- Select an Item --</option>
+            <option value="book">Book</option>
+            <option value="clothing">Clothing</option>
+        </select>
+
+        <!-- Fields for Books -->
+        <div id="book_fields" class="hidden">
+            <label for="book_name">Book Name:</label>
+            <input type="text" id="book_name" name="book_name">
+            
+            <label for="author_name">Author Name:</label>
+            <input type="text" id="author_name" name="author_name">
+            
+            <label for="book_quantity">Number of Books to Donate:</label>
+            <input type="number" id="book_quantity" name="book_quantity">
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" placeholder="Enter price"> DT
+
+        </div>
+
+        <!-- Fields for Clothing -->
+        <div id="clothing_fields" class="hidden">
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+
+            <label for="clothing_quantity">Number of Items:</label>
+            <input type="number" id="clothing_quantity" name="clothing_quantity">
+        </div>
+
+        <!-- Upload Photo -->
+        <label for="photo">Upload Photo of Item:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+
+        <button type="submit">Submit Donation</button>
+    </form>
+</div>
+
+<script>
+    function toggleFields() {
+        var itemType = document.getElementById("item_type").value;
+        var bookFields = document.getElementById("book_fields");
+        var clothingFields = document.getElementById("clothing_fields");
+
+        // Cacher tous les champs par défaut
+        bookFields.classList.add("hidden");
+        clothingFields.classList.add("hidden");
+
+        // Afficher les champs selon la sélection
+        if (itemType === "book") {
+            bookFields.classList.remove("hidden");
+        } else if (itemType === "clothing") {
+            clothingFields.classList.remove("hidden");
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../images/login.jpg);
+    margin: 0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteneur principal */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    width: 400px;
+    max-width: 100%;
+}
+
+
+
+
+/* Labels */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+/* Champs de saisie */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #e60000;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Input fichier */
+input[type="file"] {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+/* Bouton de soumission */
+button {
+    background-color: #e60000;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #c50000;
+    transform: scale(1.05);
+}
+
+
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}

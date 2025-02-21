@@ -1,0 +1,119 @@
+/* Styles généraux */
+
+
+/* Conteneur principal */
+.container1 {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Section des détails du produit */
+.product-details {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-details img {
+    max-width: 150px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e60000;;
+}
+
+/* Section du formulaire d'achat */
+.purchase-form {
+    flex: 1;
+    padding: 20px;
+}
+
+.purchase-form h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Style du formulaire */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #e60000;;
+    outline: none;
+}
+
+/* Bouton de paiement */
+.btn {
+    background-color: #e60000;;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #e60000;;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-details {
+        flex-direction: column;
+        border-bottom: none;
+    }
+
+    .product-details img {
+        margin-bottom: 15px;
+    }
+}

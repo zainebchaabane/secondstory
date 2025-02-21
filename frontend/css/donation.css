@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../images/login.jpg);
+    margin: 0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the donation form */
+.content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    width: 400px;
+    max-width: 100%;
+}
+
+/* Title */
+h1, h2 {
+    color: #e60000;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+/* Form groups */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #e60000;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Adjusting file input for image upload */
+input[type="file"] {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+input[type="file"]:focus {
+    border-color: #e60000;
+}
+
+/* Adjusting select input for size dropdown */
+select {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+}
+
+select:focus {
+    border-color: #e60000;
+}
+
+/* Submit button */
+button {
+    background-color: #e60000;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #c50000;
+}
+
+/* Information section */
+.info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.info p {
+    font-size: 16px;
+    color: #555;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Optional enhancements: Add responsiveness for mobile devices */
+@media (max-width: 480px) {
+    .content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 12px;
+    }
+}

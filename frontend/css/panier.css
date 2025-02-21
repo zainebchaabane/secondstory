@@ -1,0 +1,126 @@
+/* Style global */
+
+
+/* Conteneur principal */
+.container1 {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre du panier */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Liste des produits */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Style pour chaque produit */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.cart-item-info h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.cart-item-info p {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+}
+
+.cart-item-info div {
+    margin: 10px 0;
+}
+
+.cart-item-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.remove-item {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    background-color: #e60000;
+}
+
+/* Résumé du panier */
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.checkout-btn {
+    background-color: #e60000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #e60000;
+}
+
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+}
+input[type="size"] {
+    width: 50px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+label {
+    font-size: 14px;
+    color: #333;
+}
+
