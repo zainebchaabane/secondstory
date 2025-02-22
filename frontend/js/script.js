@@ -9,6 +9,8 @@ const closeChatbot = document.querySelector("#close-chatbot");
 
 // Load JSON context file
 let contextData = [];
+let bookData = [];
+
 
 fetch("context.json")
   .then(response => response.json())
@@ -16,7 +18,8 @@ fetch("context.json")
     contextData = data.questions; 
     console.log (contextData)
   })
-  .catch(error => console.error("Error loading context:", error));
+  .catch(error => console.error("Error loading context:", error)
+);
 
 // Find the best matching response from context
 const findAnswerInContext = (userQuestion) => {
@@ -30,7 +33,7 @@ const findAnswerInContext = (userQuestion) => {
 };
 
 // API setup
-const API_KEY = "AIzaSyBN-Yh-A4xHD2P_jQTRqeAUYHgz4tDLB4A";
+const API_KEY = "AIzaSyBwRcP9_Hgtgvt1lVcmy5oCG5Kc0Prd5I8";
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
 // Initialize user message and file data
