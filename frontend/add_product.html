@@ -16,73 +16,111 @@
 <div class="content">
     
     <h2>Add Product</h2>
-    <form action="#" method="post" enctype="multipart/form-data">
-        <label for="name">Full Name:</label>
+    <form action="/product/" method="post" enctype="multipart/form-data" id="addProductForm">
+        <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
 
-        <label for="item_type">Item Type:</label>
-        <select id="item_type" name="item_type" onchange="toggleFields()">
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" id="price" name="price" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" onchange="toggleFields()" required>
             <option value="">-- Select an Item --</option>
             <option value="book">Book</option>
-            <option value="clothing">Clothing</option>
+            <option value="clothes">Clothes</option>
         </select>
 
         <!-- Fields for Books -->
         <div id="book_fields" class="hidden">
-            <label for="book_name">Book Name:</label>
-            <input type="text" id="book_name" name="book_name">
-            
-            <label for="author_name">Author Name:</label>
-            <input type="text" id="author_name" name="author_name">
-            
-            <label for="book_quantity">Number of Books to Donate:</label>
-            <input type="number" id="book_quantity" name="book_quantity">
-            <label for="price">Price:</label>
-            <input type="text" id="price" name="price" placeholder="Enter price"> DT
+            <label for="authorName">Author Name:</label>
+            <input type="text" id="authorName" name="authorName" >
 
+            <label for="quantity">Number of Books:</label>
+            <input type="number" id="quantity" name="quantity" >
         </div>
 
-        <!-- Fields for Clothing -->
-        <div id="clothing_fields" class="hidden">
+        <!-- Fields for Clothes -->
+        <div id="clothes_fields" class="hidden">
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" >
+
             <label for="size">Size:</label>
-            <select id="size" name="size">
+            <select id="size" name="size" >
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
             </select>
 
-            <label for="clothing_quantity">Number of Items:</label>
-            <input type="number" id="clothing_quantity" name="clothing_quantity">
+            <label for="subCategory">Sub Category (e.g., Shirt, Pants):</label>
+            <input type="text" id="subCategory" name="subCategory" >
+
+            <label for="quantity">Number of Items:</label>
+            <input type="number" id="quantity" name="quantity" >
         </div>
 
         <!-- Upload Photo -->
         <label for="photo">Upload Photo of Item:</label>
         <input type="file" id="photo" name="photo" accept="image/*">
 
-        <button type="submit">Submit Donation</button>
+        <button type="submit">Submit</button>
     </form>
 </div>
 
 <script>
     function toggleFields() {
-        var itemType = document.getElementById("item_type").value;
+        var category = document.getElementById("category").value;
         var bookFields = document.getElementById("book_fields");
-        var clothingFields = document.getElementById("clothing_fields");
+        var clothesFields = document.getElementById("clothes_fields");
 
-        // Cacher tous les champs par défaut
+        // Hide all fields by default
         bookFields.classList.add("hidden");
-        clothingFields.classList.add("hidden");
+        clothesFields.classList.add("hidden");
 
-        // Afficher les champs selon la sélection
-        if (itemType === "book") {
+        // Show the correct fields based on the category selection
+        if (category === "book") {
             bookFields.classList.remove("hidden");
-        } else if (itemType === "clothing") {
-            clothingFields.classList.remove("hidden");
+        } else if (category === "clothes") {
+            clothesFields.classList.remove("hidden");
         }
     }
+    
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('addProductForm');
+        const categorySelect = document.getElementById('category');
+
+     
+
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(form);
+console.log>(form.data)
+            // Convert FormData to JSON object
+            let data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Send the data as JSON
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+            } else {
+                console.error('Error submitting form:', response.statusText);
+            }
+        });
+    });
 </script>
 
 </body>

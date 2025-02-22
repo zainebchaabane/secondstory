@@ -4,9 +4,9 @@ const router = express.Router();
 const authenticateUser = require('../middleware/authMiddleware');  // Import the middleware
 
 // Get all products
-router.get('/', productController.getAllProducts);
+router.get('/books', productController.getAllProducts);
 
-
+ 
 // Get a single product by ID
 router.get('/:id', productController.getProductById);
 
@@ -16,6 +16,7 @@ router.post(
     productController.upload.single('image'), // Middleware to handle single image upload
     productController.createProduct
 );
+
 
 // Update a product with image upload
 router.put(

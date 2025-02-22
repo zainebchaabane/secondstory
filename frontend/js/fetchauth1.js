@@ -15,10 +15,12 @@ document.querySelector('#loginForm').addEventListener('submit', async (e) => {
         if (response.ok) {
             alert('Login successful!');
             // Redirect the user after login
+            
             window.location.href = '/index.html';
         } else {
             alert(`Login failed: ${data.message}`);
         }
+        
     } catch (error) {
         console.error('Login error:', error);
         alert('An error occurred while logging in. Please try again.');
